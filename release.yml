@@ -29,10 +29,6 @@ jobs:
           cache: "poetry"
       - name: Build project for distribution
         run: poetry build
-      - name: Check Version
-        id: check-version
-        run: |
-          echo version=$(poetry version --short) >> $GITHUB_OUTPUT
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
